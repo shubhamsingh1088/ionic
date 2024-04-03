@@ -1,0 +1,37 @@
+
+<div class="example-wrap">
+  <form class="k-form k-form-md" [formGroup]="loginForm">
+    <kendo-formfield>
+      <kendo-label
+      labelCssClass="k-form-label"
+      [for]="email"
+      text="Email"
+      ></kendo-label>
+      <kendo-textbox
+      formControlName="email"
+      #email
+      required
+      ></kendo-textbox>
+      <kendo-formerror>Error: Not valid email format</kendo-formerror>
+    </kendo-formfield>
+    
+    <kendo-formfield>
+      <kendo-label
+      labelCssClass="k-form-label"
+      [for]="password"
+      text="Password"
+      ></kendo-label>
+      <kendo-textbox
+      formControlName="password"
+      #password
+      required
+      ></kendo-textbox>
+    </kendo-formfield>
+    
+    <div class="k-form-buttons">
+      <button kendoButton themeColor="primary" (click)="login()">
+        Submit
+      </button>
+    </div>
+  </form>
+</div>

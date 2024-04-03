@@ -1,0 +1,26 @@
+
+<kendo-grid [data]="gridData">
+  <kendo-grid-column field="userId" title="ID"> </kendo-grid-column>
+  <kendo-grid-column field="email" title="Email"> </kendo-grid-column>
+  <kendo-grid-column field="firstName" title="FirstName"> </kendo-grid-column>
+  <kendo-grid-column field="lastName" title="LastName"> </kendo-grid-column>
+  <kendo-grid-column field="birthDate" title="DOB"> </kendo-grid-column>
+
+  <kendo-grid-column title="View">
+    <ng-template kendoGridCellTemplate let-dataItem>
+      <button kendoButton themeColor="success" (click)="viewUser(dataItem.userId)">View</button>
+    </ng-template>
+  </kendo-grid-column>
+
+  <kendo-grid-column title="Edit">
+    <ng-template kendoGridCellTemplate let-dataItem>
+      <button kendoButton themeColor="warning" (click)="editUser(dataItem.userId)">Edit</button>
+    </ng-template>
+  </kendo-grid-column>
+
+  <kendo-grid-column title="Delete">
+    <ng-template kendoGridCellTemplate let-dataItem>
+      <button kendoButton themeColor="primary" (click)="deleteUser(dataItem.userId)">Delete</button>
+    </ng-template>
+  </kendo-grid-column>
+</kendo-grid>

@@ -1,0 +1,50 @@
+
+<ion-content class="ion-padding">
+  <!-- Front Photo Section -->
+  <div style="text-align: center; margin: auto; width: 60%;" *ngIf="!isFrontPhoto">
+    <br>
+    <ion-fab-button (click)="addPhotoToGallery('front')" style="text-align: center; margin: auto;">
+      <ion-icon name="camera"></ion-icon>
+    </ion-fab-button>
+    <p>Take Front Photo</p>
+  </div>
+  
+  <ng-container *ngFor="let photo of photoService.photos; index as position">
+    <div *ngIf="photo.type === 'front'">
+      <ion-img [src]="photo.webviewPath" style="width: 300px; height: 300px; text-align: center; margin: auto;"></ion-img>
+    </div>
+  </ng-container>
+  <ion-icon class="h3 ion-color-gray80 mr-10" src="../../../../../assets/icon/trash-2.svg"
+  style="text-align: center; margin: auto; width: 100%;" (click)="deleteFrontImage()" *ngIf="isFrontPhoto"></ion-icon>
+  <br>
+  <br>
+  
+  <!-- Back Photo Section -->
+  <div style="text-align: center; margin: auto; width: 60%;" *ngIf="!isBackPhoto">
+    <ion-fab-button (click)="addPhotoToGallery('back')" style="text-align: center; margin: auto;">
+      <ion-icon name="camera"></ion-icon>
+    </ion-fab-button>
+    <p>Take Back Photo</p>
+  </div>
+  
+  <ng-container *ngFor="let photo of photoService.photos; index as position">
+    <div *ngIf="photo.type === 'back'">
+      <ion-img [src]="photo.webviewPath" style="width: 300px; height: 300px; text-align: center; margin: auto;"></ion-img>
+    </div>
+  </ng-container>
+  <br>
+  <ion-icon class="h3 ion-color-gray80 mr-10" src="../../../../../assets/icon/trash-2.svg" 
+  style="text-align: center; margin: auto; width: 100%;" (click)="deleteBackImage()" *ngIf="isBackPhoto"></ion-icon>
+  <br>
+  <br>
+  
+  <!-- Done and Cancel Buttons -->
+  <div style="text-align: center; margin: auto; width: 100%;">
+    <ion-button fill="outline" (click)="onCancel()">Cancel</ion-button>
+    <span style="margin-left: 10px;">
+      <ion-button fill="outline" (click)="onDone()">Done</ion-button>
+    </span>
+    <p *ngIf="showError">Please upload both front and back photo</p>
+  </div>
+</ion-content>
+

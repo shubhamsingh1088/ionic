@@ -1,0 +1,92 @@
+
+<div class="example-wrap">
+  <form class="k-form k-form-md" [formGroup]="editForm">
+    <fieldset class="k-form-fieldset">
+      <legend class="k-form-legend">User Details</legend>
+      <kendo-formfield>
+        <kendo-label
+        labelCssClass="k-form-label"
+        [for]="firstName"
+        text="First Name"
+        ></kendo-label>
+        <kendo-textbox
+        formControlName="firstName"
+        #firstName
+        required
+        ></kendo-textbox>
+        
+        <kendo-formhint>Your first name</kendo-formhint>
+        <kendo-formerror>Error: First name is required</kendo-formerror>
+      </kendo-formfield>
+      
+      <kendo-formfield>
+        <kendo-label
+        labelCssClass="k-form-label"
+        [for]="lastName"
+        text="Last Name"
+        ></kendo-label>
+        <kendo-textbox
+        formControlName="lastName"
+        #lastName
+        required
+        ></kendo-textbox>
+        
+        <kendo-formhint>Your last name</kendo-formhint>
+        <kendo-formerror>Error: Last name is required</kendo-formerror>
+      </kendo-formfield>
+      
+      <kendo-formfield>
+        <kendo-label
+        labelCssClass="k-form-label"
+        [for]="birthDate"
+        [optional]="true"
+        text="Birth Date"
+        ></kendo-label>
+        <kendo-datepicker
+        #birthDate
+        formControlName="birthDate"
+        [min]="min"
+        [max]="max"
+        ></kendo-datepicker>
+        <kendo-formhint>Your birth date</kendo-formhint>
+      </kendo-formfield>
+      
+      <kendo-formfield>
+        <kendo-label
+        labelCssClass="k-form-label"
+        [for]="email"
+        text="Email"
+        ></kendo-label>
+        <kendo-textbox
+        formControlName="email"
+        #email
+        required
+        ></kendo-textbox>
+        
+        <kendo-formhint>Your active email</kendo-formhint>
+        <kendo-formerror>Error: Not valid email format</kendo-formerror>
+      </kendo-formfield>
+      
+      <kendo-formfield>
+        <kendo-label
+        labelCssClass="k-form-label"
+        [for]="password"
+        text="Password"
+        ></kendo-label>
+        <kendo-textbox
+        formControlName="password"
+        #password
+        required
+        ></kendo-textbox>
+        
+        <kendo-formhint>Your Password</kendo-formhint>
+      </kendo-formfield>
+      
+      <div class="k-form-buttons">
+        <button kendoButton themeColor="primary" (click)="editUser()">
+          Submit
+        </button>
+      </div>
+    </fieldset>
+  </form>
+</div>

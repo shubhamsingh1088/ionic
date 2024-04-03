@@ -1,0 +1,59 @@
+<div *ngIf="logout">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Logout Modal</ion-title>
+      <ion-buttons slot="end">
+        <ion-button (click)="closeModal()">Close</ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content class="ion-padding">
+    <p>{{ message }}</p>
+    <ion-button fill="outline" color="primary" (click)="confirmAction()">Confirm</ion-button>
+    <ion-button fill="outline" color="danger" (click)="cancelAction()">Cancel</ion-button>
+  </ion-content>
+</div>
+
+<div *ngIf="insurance">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Insurance Modal</ion-title>
+      <ion-buttons slot="end">
+        <ion-button (click)="closeModal()">Close</ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content class="ion-padding">
+    <p>{{ message }}</p>
+    <ion-button fill="outline" color="primary" (click)="confirmAction()">Confirm</ion-button>
+    <ion-button fill="outline" color="danger" (click)="cancelAction()">Cancel</ion-button>
+  </ion-content>
+</div>
+
+<ion-header *ngIf="imagePreview">
+  <ion-toolbar>
+    <ion-title>Preview Image</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()">Close</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <image-cropper
+    [imageURL]="message"
+    [maintainAspectRatio]="true"
+    [aspectRatio]="4 / 3"
+    (imageCropped)="imageCropped($event)"
+    (imageLoaded)="imageLoaded($event)"
+    (cropperReady)="cropperReady()"
+    (loadImageFailed)="loadImageFailed()"
+    ></image-cropper>
+    <img [src]="croppedImage" style="text-align: center;"/>
+  <ion-button fill="outline" color="primary" (click)="confirmAction()">Confirm</ion-button>
+  <ion-button fill="outline" color="danger" (click)="cancelAction()">Cancel</ion-button>
+</ion-content>
+
+

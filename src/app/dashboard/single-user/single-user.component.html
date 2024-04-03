@@ -1,0 +1,12 @@
+<div class="list">
+  <div class="contact-list">User-Details</div>
+
+  <div class="contact" *ngFor="let key of getObjectKeys(userData)">
+    <div class="k-hstack">
+      <kendo-avatar></kendo-avatar>
+      <div>
+        <h2>{{ userData[key] }}</h2>
+      </div>
+    </div>
+  </div>
+</div>
