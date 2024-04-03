@@ -7,7 +7,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build --configuration=production --base-href https://shubhamsingh1088.github.io/ionic/",
-    "host": "npx angular-cli-ghpages --dir=www",
+    "host": "npx angular-cli-ghpages --dir=docs",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint"
