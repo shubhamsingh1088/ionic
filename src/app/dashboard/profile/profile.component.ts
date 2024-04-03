@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { AuthService } from 'src/app/auth.service';
 import { PhotoService } from 'src/app/services/photo.service';
+import { ModalService } from 'src/app/modal.service';
 
 @Component({
   selector: 'app-profile',
@@ -14,7 +15,7 @@ export class ProfileComponent  implements OnInit {
   data: any[] = [];
   public subscription!: Subscription;
   
-  constructor(private authService: AuthService, public photoService: PhotoService, private router: Router, private route: ActivatedRoute) {}
+  constructor(private authService: AuthService, public photoService: PhotoService, private router: Router, private route: ActivatedRoute, public modalService: ModalService) {}
   
   async ngOnInit() {
     this.photoService.data$.subscribe(data => {
@@ -32,7 +33,7 @@ export class ProfileComponent  implements OnInit {
   }
 
   iframeLink() {
-    this.router.navigate(['/dashboard/iframe'], { relativeTo: this.route });
+    this.modalService.openIframeModal();
   }
   
 }
