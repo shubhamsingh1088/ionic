@@ -13,8 +13,8 @@ const routes: Routes = [
     path: '',
     // canActivate: [AuthGuard],
     children: [
-      { path: '', redirectTo: 'profile', pathMatch: 'full' },
-      { path: 'profile', component: ProfileComponent },
+      { path: '', redirectTo: 'home', pathMatch: 'full' },
+      { path: 'home', component: ProfileComponent },
       { path: 'users-list', component: UsersListComponent },
       { path: 'user/:id', component: SingleUserComponent },
       { path: 'edit-user/:id', component: EditUserComponent },
