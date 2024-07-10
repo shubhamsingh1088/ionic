@@ -4,8 +4,45 @@ ion-menu {
     &::part(backdrop) {
         background-color: $background-color_1;
     }
+
     &::part(container) {
         border-radius: 0 20px 20px 0;
         box-shadow: 4px 0px 16px rgba(255, 0, 255, 0.18);
+    }
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #333;
+    font-size: 16px;
+    cursor: pointer;
+
+    &:disabled {
+        background-color: #ddd;
+        cursor: not-allowed;
     }
 }

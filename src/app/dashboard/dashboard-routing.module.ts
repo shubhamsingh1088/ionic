@@ -7,6 +7,7 @@ import { SingleUserComponent } from './single-user/single-user.component';
 import { EditUserComponent } from './edit-user/edit-user.component';
 import { CaptureFrontBackComponent } from '../capture-front-back/capture-front-back.component';
 import { IframeComponentComponent } from './iframe-component/iframe-component.component';
+import { AllCoursesComponent } from './all-courses/all-courses.component';
 
 const routes: Routes = [
   {
@@ -19,7 +20,8 @@ const routes: Routes = [
       { path: 'user/:id', component: SingleUserComponent },
       { path: 'edit-user/:id', component: EditUserComponent },
       { path: 'insurance-card', component: CaptureFrontBackComponent },
-      { path: 'iframe', component: IframeComponentComponent }
+      { path: 'iframe', component: IframeComponentComponent },
+      { path: 'allCourses', component: AllCoursesComponent }
     ]
   }
 ];

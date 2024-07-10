@@ -1,0 +1,16 @@
+<ion-content class="ion-padding">
+  <div class="course-container" *ngFor="let course of courses">
+    <div class="course-box">
+      <div class="course-header">
+        <h2>{{ course.title }}</h2>
+      </div>
+      <div class="course-body">
+        <img *ngIf="course.image" [src]="'http://localhost:3000/' + course.image" alt="Course Image" class="course-image">
+        <p>{{ course.description }}</p>
+      </div>
+      <div class="course-footer">
+        <span>Price: {{ course.price }}</span>
+      </div>
+    </div>
+  </div>
+</ion-content>

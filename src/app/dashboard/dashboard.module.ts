@@ -19,9 +19,10 @@ import { ModalComponent } from '../modal/modal.component';
 import { ImageCropperModule } from 'ngx-image-cropper';
 import { CaptureFrontBackComponent } from '../capture-front-back/capture-front-back.component';
 import { IframeComponentComponent } from './iframe-component/iframe-component.component';
+import { AllCoursesComponent } from './all-courses/all-courses.component';
 
 @NgModule({
-  declarations: [ProfileComponent, UsersListComponent, SingleUserComponent, EditUserComponent, ModalComponent, CaptureFrontBackComponent, IframeComponentComponent],
+  declarations: [ProfileComponent, UsersListComponent, SingleUserComponent, EditUserComponent, ModalComponent, CaptureFrontBackComponent, IframeComponentComponent, AllCoursesComponent],
   imports: [
     CommonModule,
     IonicModule.forRoot(),

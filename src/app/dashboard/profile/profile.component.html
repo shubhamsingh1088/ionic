@@ -46,9 +46,54 @@
         </ion-col>
         <ion-button fill="outline" (click)="uploadImages()">Upload Images</ion-button>
       </ion-row>
-    </ion-grid> -->
-    <!-- <ion-grid>
+    </ion-grid>
+    <ion-grid>
       <ion-button fill="outline" (click)="iframeLink()">Open</ion-button>
     </ion-grid> -->
+
+    <div class="container">
+      <h2>Create Category</h2>
+      <form [formGroup]="categoryForm" (ngSubmit)="createCategory()">
+        <div class="form-group">
+          <label for="type">Category Type</label>
+          <input id="type" formControlName="type" class="form-control" type="text">
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="categoryForm.invalid">Create Category</button>
+      </form>
+
+      <h2>Create Item</h2>
+      <form [formGroup]="itemForm" (ngSubmit)="createItem()">
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input id="title" formControlName="title" class="form-control" type="text">
+        </div>
+        <div class="form-group">
+          <label for="category">Category</label>
+          <select id="category" formControlName="category" class="form-control">
+            <option *ngFor="let category of categories" [value]="category.type">{{ category.type }}</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="description">Description</label>
+          <textarea id="description" formControlName="description" class="form-control"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="price">Price</label>
+          <input id="price" formControlName="price" class="form-control" type="text">
+        </div>
+        <div class="form-group">
+          <label for="sku">SKU</label>
+          <input id="sku" formControlName="sku" class="form-control" type="text">
+        </div>
+        <!-- Add image upload input here -->
+        <div class="form-group">
+          <label for="profileImage">Profile Image</label>
+          <input id="profileImage" type="file" (change)="onFileSelected($event)" class="form-control">
+        </div>
+        <!-- End of image upload input -->
+        <button type="submit" class="btn btn-primary" [disabled]="itemForm.invalid">Create Course</button>
+      </form>
+    </div>
+
   </ion-content>
 </div>
